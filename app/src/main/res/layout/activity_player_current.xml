@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerActivityCurrent"
+    android:background="#B2717E75"
+    android:padding="5dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/goBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:padding="4dp"
+        app:srcCompat="@drawable/iconmuiten" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleimageviewPlayer"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/musicpic"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        app:civ_border_color="#B0D8F8"
+        app:civ_border_width="5dp"/>
+
+    <SeekBar
+        android:id="@+id/volume"
+        android:layout_width="70dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="250dp"
+        android:layout_toEndOf="@id/circleimageviewPlayer"
+        android:rotation="270"
+        android:thumb="@drawable/seekbar_thumb" />
+
+    <TextView
+        android:id="@+id/musicName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/circleimageviewPlayer"
+        android:text="Waiting For You"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:id="@+id/authorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/musicName"
+        android:text="Mono"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/authorName"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp">
+
+        <SeekBar
+            android:id="@+id/playline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:thumbTint="@color/white"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:id="@+id/startText"
+                android:textColor="#fff"
+                android:layout_marginStart="12dp"
+                android:text="0:00" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:id="@+id/endText"
+                android:textColor="#fff"
+                android:text="0:00"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/linear1"
+        android:weightSum="4"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:id="@+id/previousSong"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_baseline_skip_previous_24"/>
+        <ImageView
+            android:id="@+id/play"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="60dp"
+            android:src="@drawable/ic_play_arrow_black_24dp"
+            android:importantForAutofill="yes"
+            android:contentDescription="Click to play"
+            android:onClick="PlayButton" />
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_baseline_skip_next_24"
+            android:id="@+id/nextSong"/>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/loopSong"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/ic_baseline_loop_24" />
+
+    <ImageView
+        android:id="@+id/shuffle"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="330dp"
+        android:layout_marginBottom="50dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_shuffle" />
+
+
+    <!--    <ImageView-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginBottom="40dp"-->
+<!--        android:contentDescription="@string/app_name"-->
+<!--        android:src="@drawable/ic_favorite_border_black_24dp" />-->
+
+
+</RelativeLayout>
