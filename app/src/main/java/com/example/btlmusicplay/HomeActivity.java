@@ -90,6 +90,8 @@ public class HomeActivity extends AppCompatActivity {
     private void updateRecyclerView(ArrayList<File> updatedSongs) {
         // Chuyển đổi danh sách File sang danh sách Song
         songList = new ArrayList<>();
+        ArrayList<File> fileArrayAfterSearch = new ArrayList<>();
+        int positionInFiles = 0;
         for (File file : updatedSongs) {
             String title = file.getName().replace(".mp3", "").replace(".wav", "");
             AudioFile audioFile = null;
@@ -114,13 +116,15 @@ public class HomeActivity extends AppCompatActivity {
                 throw new RuntimeException(e);
             }
             String path = file.getAbsolutePath();
+            fileArrayAfterSearch.add(file);
             Song song = new Song(title, artist, path, songDuration);
+            positionInFiles++;
             songList.add(song);
         }
 
         // Sử dụng adapter với danh sách Song
         if(songList.size()<songs.size()){
-            playSongs(songList);
+            playSongs(songList,fileArrayAfterSearch);
         }else{
             playSongs();
         }
@@ -279,8 +283,9 @@ public class HomeActivity extends AppCompatActivity {
 
         return formattedTime;
     }
-    void playSongs(ArrayList<Song> songsAfterSearch){
+    void playSongs(ArrayList<Song> songsAfterSearch,ArrayList<File> filesAfterSearch){
         CustomAdapter customAdapter = new CustomAdapter(songsAfterSearch);
+
         recyclerView.setAdapter(customAdapter);
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
             @Override
@@ -291,7 +296,7 @@ public class HomeActivity extends AppCompatActivity {
                     String songName = songsAfterSearch.get(position).getTitle().replace(".mp3", "").replace(".wav", "");
                     String songArtist = songsAfterSearch.get(position).getArtist();
                     startActivity(new Intent(getApplicationContext(), PlayerActivity.class)
-                            .putExtra("songs", songs)
+                            .putExtra("songs", filesAfterSearch)
                             .putExtra("songList",songList)
                             .putExtra("songName", songName)
                             .putExtra("songArtist",songArtist)
