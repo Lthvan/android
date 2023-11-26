@@ -30,17 +30,6 @@
             android:layout_height="wrap_content"
             android:text="Search"/>
     </LinearLayout>
-
-<!--    <ListView-->
-<!--        android:id="@+id/listViewSong"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:divider="@android:color/transparent"-->
-<!--        android:dividerHeight="10.0sp"-->
-<!--        android:padding="8dp"-->
-<!--        tools:layout_editor_absoluteX="0dp"-->
-<!--        tools:layout_editor_absoluteY="220dp">-->
-
 <!--    </ListView>-->
     <!-- Linear layout to contain RecyclerView -->
     <LinearLayout
@@ -50,22 +39,11 @@
         android:layout_marginTop="8dp"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/searchLayout"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView">
-
+        >
         <!-- Replace ListView with RecyclerView -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewSong"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu"
-        />
 </androidx.constraintlayout.widget.ConstraintLayout>

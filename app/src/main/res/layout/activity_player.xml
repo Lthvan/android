@@ -31,17 +31,27 @@
             android:id="@+id/songName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
             android:ellipsize="marquee"
             android:text="test"
             android:marqueeRepeatLimit="marquee_forever"
-            android:padding="10dp"
+            android:padding="6dp"
             android:singleLine="true"
             android:textAlignment="center"
             android:textColor="#000"
             android:textSize="24sp"
             android:textStyle="italic" />
-
+        <TextView
+            android:id="@+id/songArtist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:text="test"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="italic" />
         <ImageView
             android:id="@+id/songCover"
             android:layout_width="250dp"
@@ -125,27 +135,27 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/ic_previous"
                 />
-            <Button
-                android:contentDescription="loop"
-                android:id="@+id/btnLoop"
-                android:layout_toEndOf="@id/btnNext"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginStart="20dp"
-                android:background="@drawable/ic_loop_non_nactive"
-                />
+<!--            <Button-->
+<!--                android:contentDescription="loop"-->
+<!--                android:id="@+id/btnLoop"-->
+<!--                android:layout_toEndOf="@id/btnNext"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:background="@drawable/ic_loop_non_nactive"-->
+<!--                />-->
 
-            <Button
-                android:contentDescription="shuffle"
-                android:id="@+id/btnShuffle"
-                android:layout_toLeftOf="@id/btnPrevious"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/ic_shuffle" />
+<!--            <Button-->
+<!--                android:id="@+id/btnShuffle"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginStart="15dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:layout_toLeftOf="@id/btnPrevious"-->
+<!--                android:background="@drawable/ic_baseline_shuffle_24_noactive"-->
+<!--                android:contentDescription="shuffle" />-->
         </RelativeLayout>
     </LinearLayout>
 
